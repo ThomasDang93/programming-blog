@@ -1,26 +1,32 @@
 # programming-blog
 
-programming-blog is my personal Django project that serves 
-as a template for a blog website made with programmers in mind. 
-It features a Markdown editor, Disqus comment integration, 
-categories, tags, and blog post pagination. This project
-was initially made to deploy in AWS, but you can easily 
+**programming-blog** is my personal Django project that serves 
+as a template for a blog websitemade with programmers in mind. 
+Here are the major features: 
+* Markdown editor
+* Disqus comment integration
+* Taxonomy with Categories and Tags 
+* Blog post pagination
+* Online Resume Template
+
+This projecet was initially made to deploy in AWS, but you can easily 
 tweak the code to utilize whatever hosting provider you like.
 
-The code in this repository powers my personal website, which you can check out right here:
+The code in this repository runs my personal website, which you can check out right here:
 
 https://www.thomasbyte.com/
 
 
 Quick start
 -----------
-These instructions assume that you have initiated a brand new Django project
-and have copied the needed files from the "programming-blog" repository onto your root 
-directory. You should also create your own virtual environment to avoid package conflicts.
+These instructions assume that you have initiated a brand new Django project with `django-admin startproject ebdjango`. You should also create your own virtual environment with `virtualenv` to avoid package conflicts.
 
 ## Step 1
+In your new Django project, save your SECRET_ACCESS_KEY into a text editor. You will need it later.
 
-Your root directory should look something like this with all the source files in each folder.
+Now capture the **programming-blog** repository using `git clone https://github.com/ThomasDang93/programming-blog.git`.
+Once captured, move all the files into your Django root directory so that it overirides your original Django files. 
+Your root directory should look something like this.
 ```
 	.
 	├── blog
@@ -97,12 +103,13 @@ The `.env` file contains environment variables needed to run the project.
 This helps decouple the deployment process for production environment while still
 allowing you to run this project locally. When you decide to deploy to a hosting environment, it
 is recommended that you establish environment variables for that host instead of hardcoding 
-sensitive information like secret keys. Open `.env` and proceed to set up those variables. 
-Some variables may be optional depending on whether or not you need them for local testing.
+sensitive information like secret keys. Open `.env` and proceed to set up those variables, including
+the SECRET_ACCESS_KEY that you saved earlier. Some variables may be optional depending on whether or 
+not you need them for local testing.
 
 ## Step 6
 
-Run `python manage.py migrate` to create the blog models.
+Run `python manage.py makemigrations` and then `python manage.py migrate` to create the blog models.
 
 ## Step 7
 
@@ -119,7 +126,7 @@ You must login with the username and password you created.
 Visit http://localhost:8000 to view your website.
 
 ## That's it!
-Just note that when you do deploy your website in production environment, you need to do a few things to add security.
+Just note that when you decide to deploy your website in a production environment, you need to do a few things to add security.
 1. Set `DEBUG = FALSE` in `settings.py`
 2. Uncomment this code block from `settings.py`
 ```
