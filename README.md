@@ -43,6 +43,7 @@ those will only be used for deploying this project to AWS. Refer to these docs
 if you would like to learn how to deploy on AWS:
 
 https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html
+
 https://realpython.com/deploying-a-django-app-and-postgresql-to-aws-elastic-beanstalk/
 
 ## Step 2
