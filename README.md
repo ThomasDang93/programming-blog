@@ -46,6 +46,8 @@ Your root directory should look something like this.
 	│   └── views.py
 	├── manage.py
 	├── mysite
+	├── venv
+	├── .env
 	├── README.rst
 	└── requirements.txt
   ```
