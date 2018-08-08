@@ -19,7 +19,7 @@ https://www.thomasbyte.com/
 
 Quick start
 -----------
-These instructions assume that you have initiated a brand new Django project with `django-admin startproject ebdjango`. You should also create your own virtual environment with `virtualenv` to avoid package conflicts.
+These instructions assume that you have initiated a brand new Django project with `django-admin startproject yourprojectname`. You should also create your own virtual environment with `virtualenv` to avoid package conflicts.
 
 ## Step 1
 In your new Django project, save your SECRET_ACCESS_KEY into a text editor. You will need it later.
