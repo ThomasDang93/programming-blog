@@ -1,6 +1,6 @@
 # programming-blog
 
-**programming-blog** is my personal Dj  ango project that serves 
+**programming-blog** is my personal Django project that serves 
 as a template for a blog website made with programmers in mind. 
 Here are the major features: 
 * Markdown editor
