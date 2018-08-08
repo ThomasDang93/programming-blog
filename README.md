@@ -1,6 +1,6 @@
 # programming-blog
 
-**programming-blog** is my personal Django project that serves 
+**programming-blog** is my personal Dj  ango project that serves 
 as a template for a blog website made with programmers in mind. 
 Here are the major features: 
 * Markdown editor
@@ -9,13 +9,15 @@ Here are the major features:
 * Blog post pagination
 * Online Resume Template
 
-This projecet was initially made to deploy in AWS, but you can easily 
+This project was initially made to deploy in AWS, but you can easily 
 tweak the code to utilize whatever hosting provider you like.
 
 The code in this repository runs my personal website, which you can check out right here:
 
 https://www.thomasbyte.com/
 
+As you can see, this project is mainly a personal body of work. But feel free to share any
+improvements that you think can extend the functionality of the blog.
 
 Quick start
 -----------
