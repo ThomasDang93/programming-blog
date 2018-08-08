@@ -7,6 +7,10 @@ categories, tags, and blog post pagination. This project
 was initially made to deploy in AWS, but you can easily 
 tweak the code to utilize whatever hosting provider you like.
 
+The code in this repository powers my personal website, which you can check out right here:
+
+https://www.thomasbyte.com/
+
 
 Quick start
 -----------
