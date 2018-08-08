@@ -91,10 +91,10 @@ urlpatterns = [
 
 The `.env` file contains environment variables needed to run the project. 
 This helps decouple the deployment process for production environment while still
-allowing you to run this project locally. When you do deploy to a hosting environment, it
-is recommended that you establish environment variables for that host as oppose to hardcoding 
+allowing you to run this project locally. When you decide to deploy to a hosting environment, it
+is recommended that you establish environment variables for that host instead of hardcoding 
 sensitive information like secret keys. Open `.env` and proceed to set up those variables. 
-Some variables may be optional depending if you need them for local testing.
+Some variables may be optional depending on whether or not you need them for local testing.
 
 ## Step 6
 
