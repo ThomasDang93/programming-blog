@@ -64,7 +64,7 @@ Make sure you download all the python packages listed in `requirements.txt` usin
 
 ## Step 3
 
-Make sure your INSTALLED_APPS looks like this in settings.py
+Make sure your INSTALLED_APPS looks like this in `settings.py`
 ```
 INSTALLED_APPS = [
     ...
