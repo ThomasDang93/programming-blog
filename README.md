@@ -38,8 +38,8 @@ Your root directory should look something like this with all the source files in
 	└── requirements.txt
   ```
 
-You can also include .ebextensions in the root directory, but 
-that folder will only be used for deploying this project to AWS. Refer to these docs
+You can also include .ebextensions and .ebignore in the root directory, but 
+those will only be used for deploying this project to AWS. Refer to these docs
 if you would like to learn how to deploy on AWS:
 
 https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html
