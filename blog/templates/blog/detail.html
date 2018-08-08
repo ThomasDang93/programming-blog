@@ -1,0 +1,45 @@
+{% extends 'blog/base.html' %}
+{% block content %} 
+{% load static %} 
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{% static 'blog/img/background.jpg' %}')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          {% if post.pub_date %}
+            <h1 class="custom-background-title word-break">{{ post.post_title }}</h1>
+            <h5 class="custom-background-title">
+              By Your Name on {{ post.pub_date }}
+            </h5>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        {% load martortags %}
+        <p>{{ post.post_text|safe_markdown }}</p>
+      </div>
+    </div>
+  </div>
+</article>
+<!--Disqus integration-->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      {% load disqus_tags %}
+      {% disqus_show_comments %}
+      {% set_disqus_identifier post.slug %}
+      {% set_disqus_url post.get_absolute_url %}
+      {% set_disqus_title post.post_title %}
+    </div>
+  </div>
+</div>
+{% endblock %}

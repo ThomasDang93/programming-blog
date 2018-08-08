@@ -1,0 +1,70 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% load static %}
+{% load taggit_templatetags2_tags %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{% static 'blog/img/background.jpg' %}')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>
+            <a class="custom-background-title" href="{% url 'blog:index' %}">Your Name</a>
+            <span class="subheading">A witty subheading</span>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!--Post List -->
+{% if latest_post_list %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <h1 class="custom-sub-head">Recent Posts</h1>
+        <hr>
+        {% load martortags %}
+        {% for post in latest_post_list %}
+          <div class="post-preview">
+            <a href="{{ post.get_absolute_url }}">
+              <h2 class="post-title custom-title-list">
+                {{ post.post_title }}
+              </h2>
+            </a>
+            {% if post.pub_date %}
+              <h5 class="custom-date-list">By Your Name on {{ post.pub_date }}</h5>
+            {% endif %}
+            <p>{{post.post_text|safe_markdown|truncatechars_html:150}}</p>
+            {% if post.category %}
+            <div id="post-tag-list">
+              <ul>Category: 
+                <li>
+                  <a class="blue-links" href="{{ post.category.get_absolute_url }}">{{ post.category }}</a>
+                </li>
+              </ul>
+            </div>
+            {% endif %}
+            <div id="post-tag-list">
+            {% get_tags_for_object post as "tags" %}
+              <ul>Tags: 
+                {% for tag in tags %}
+                  <li><a class="blue-links" href="{% url 'blog:tagged' tag.slug %}">{{tag}}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <hr>
+        {% endfor %}
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary float-right custom-older-posts" href="{% url 'blog:history' %}">All Posts &raquo;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% else %}
+  <p>No posts are available</p>
+{% endif %}
+{% endblock %}

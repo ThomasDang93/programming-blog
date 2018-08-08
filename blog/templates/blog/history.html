@@ -1,0 +1,126 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% load static %}
+{% load taggit_templatetags2_tags %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{% static 'blog/img/background.jpg' %}')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>
+            <a class="custom-background-title" href="{% url 'blog:history' %}">Blog Posts</a>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!--category list-->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <h1 class="custom-sub-head">
+        Categories
+      </h1>
+      <div id="sub-head-list">
+        <ul>
+          {% for category_object in category %}
+            {% if forloop.last %}
+              <li>
+                <a class="blue-links" href="{{ category_object.get_absolute_url }}">{{ category_object.category_name }}</a>
+              </li>
+            {% else %}
+              <li>
+              <a class="blue-links" href="{{ category_object.get_absolute_url }}">{{ category_object.category_name }}</a>
+              <span style="color: rgb(134, 142, 150);"> &#9679; </span>
+            </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>
+<!--Post List -->
+{% if latest_post_list %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        {% load martortags %}
+        {% for post in latest_post_list %}
+          <div class="post-preview">
+            <a href="{{ post.get_absolute_url }}">
+              <h2 class="post-title custom-title-list">
+                {{ post.post_title }}
+              </h2>
+            </a>
+            {% if post.pub_date %}
+              <h5 class="custom-date-list">By Your Name on {{ post.pub_date }}</h5>
+            {% endif %}
+            <p>{{post.post_text|safe_markdown|truncatechars_html:150}}</p>
+            {% if post.category %}
+            <div id="post-tag-list">
+              <ul>Category: 
+                <li>
+                  <a class="blue-links" href="{{ post.category.get_absolute_url }}">{{ post.category }}</a>
+                </li>
+              </ul>
+            </div>
+            {% endif %}
+            <div id="post-tag-list">
+            {% get_tags_for_object post as "tags" %}
+              {% if tags.all %}
+              <ul>Tags: 
+                {% for tag in tags %}
+                  <li><a class="blue-links" href="{% url 'blog:tagged' tag.slug %}">{{tag}}</a></li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </div>
+          </div>
+          <hr>
+        {% endfor %}
+        <!-- Pagination -->
+        {% if is_paginated %}
+          {% load proper_paginate %}
+          {% load link_name %}
+          <ul class="pagination">
+              {% if page_obj.number == 1 %}
+                  <li class="disabled"><span>⇤</span></li>
+              {% else %}
+                  <li><a href={{ request.get_full_path|link_name:1 }}>⇤</a></li>
+              {% endif %}
+              {% if page_obj.has_previous %}
+                  <li>&nbsp;<a href={{ request.get_full_path|link_name:page_obj.previous_page_number }}>&laquo;</a>&nbsp;</li>
+              {% else %}
+                  <li class="disabled">&nbsp;<span>&laquo;</span>&nbsp;</li>
+              {% endif %}
+              {% for i in paginator|proper_paginate:page_obj.number %}
+                  {% if page_obj.number == i %}
+                      <li class="active"><span><font color="red"> {{ i }} </font><span class="sr-only">(current)</span></span>&nbsp;</li>
+                  {% else %}
+                      <li><a href={{ request.get_full_path|link_name:i }}>{{ i }} </a>&nbsp;</li>
+                  {% endif %}
+              {% endfor %}
+              {% if page_obj.has_next %}
+                  <li>&nbsp;<a href={{ request.get_full_path|link_name:page_obj.next_page_number }}>&raquo;</a>&nbsp;</li>
+              {% else %}
+                  <li class="disabled">&nbsp;<span>&raquo;</span>&nbsp;</li>
+              {% endif %}
+              {% if page_obj.number == paginator.num_pages %}
+                  <li class="disabled"><span>⇥</span></li>
+              {% else %}
+                  <li><a href={{ request.get_full_path|link_name:paginator.num_pages }}>⇥</a></li>
+              {% endif %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% else %}
+  <p>No posts are available</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends 'blog/base.html' %}
+{% block content %} 
+{% load static %} 
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{% static 'blog/img/background.jpg' %}')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>
+            <a class="custom-background-title" href="{% url 'blog:portfolio' %}">Portfolio</a>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <!-- Education -->
+        <h1 class="custom-calibri">
+          <u>Education</u>
+        </h1>
+        <h3 class="custom-calibri">
+          <a class="blue-links" href=""> Your School Name </a>
+        </h3>
+        <h5 class="custom-calibri">
+          <a class="blue-links">Bachelor of Science in Computer Science</a>
+          <span style="color: rgb(134, 142, 150);"> &#9679; </span>
+          <font color="#868E96">August 2014 – May 2018</font>
+        </h5>
+        <br>
+        <!-- Work Experience -->
+        <h1 class="custom-calibri">
+          <u>Work Experience</u>
+        </h1>
+        <h3 class="custom-calibri"><a class="blue-links" href="">Software Research Intern</a></h3>
+        <h5 class="custom-calibri">Your School Name
+          <span style="color: rgb(134, 142, 150);"> &#9679; </span>
+          <font color="#868E96">June 2014 – August 2014</font>
+        </h5>
+        <p class="custom-calibri">
+          Describe your job duties here.
+        </p>
+        <!-- Projects -->
+        <h1 class="custom-calibri">
+          <u>Projects</u>
+        </h1>
+        <h3 class="custom-calibri">
+          <a class="blue-links" href="">Personal Website</a>
+        </h3>
+        <h5 class="custom-calibri">
+          <a class="blue-links">Developer, Writer, Administrator</a>
+          <span style="color: rgb(134, 142, 150);"> &#9679; </span>
+          <font color="#868E96">June 2018 – Present</font>
+        </h5>
+        <p class="custom-calibri">
+          Describe your project here.
+        </p>
+        <!-- Technical Skills -->
+        <h1 class="custom-calibri">
+          <u>Technical Skills</u>
+        </h1>
+        <h3 class="custom-calibri">Languages:</h3>
+        <div style="float: left; width: 50%;">
+          <ul class="custom-calibri">
+            <li>Python</li>
+            <li>CSS</li>
+            <li>C++</li>
+            <li>MATLAB</li>
+          </ul>
+        </div>
+        <div style="float: right; width: 50%;">
+          <ul class="custom-calibri">
+            <li>Java</li>
+            <li>HTML</li>
+            <li>MIPS</li>
+            <li>R</li>
+          </ul>
+        </div>
+        <h3 class="custom-calibri">Operating Systems:</h3>
+        <div>
+          <ul class="custom-calibri">
+            <li>macOS</li>
+            <li>Linux</li>
+            <li>Windows</li>
+          </ul>
+        </div>
+        <h3 class="custom-calibri">Tools, Frameworks, Libraries:</h3>
+        <div style="float: left; width: 50%;">
+          <ul class="custom-calibri">
+            <li>Amazon Web Services</li>
+            <li>Bash Scripting</li>
+            <li>GNU Make</li>
+            <li>JDBC</li>
+            <li>Visio</li>
+          </ul>
+        </div>
+        <div style="float: right; width: 50%;">
+          <ul class="custom-calibri">
+            <li>Django</li>
+            <li>Git</li>
+            <li>Java Message Service</li>
+            <li>Bootstrap</li>
+            <li>Sublime Text</li>
+          </ul>
+        </div>
+        <h3 class="custom-calibri">Databases:</h3>
+        <div>
+          <ul class="custom-calibri">
+            <li>PostgreSQL</li>
+            <li>SQLite</li>
+            <li>MySQL</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+{% endblock %}

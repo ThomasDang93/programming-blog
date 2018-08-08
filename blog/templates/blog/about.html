@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+{% block content %} 
+{% load static %} 
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{% static 'blog/img/background.jpg' %}')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>
+            <a class="custom-background-title" href="{% url 'blog:about' %}">About Me</a>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<img src="{% static 'blog/img/me-circle.jpg' %}" style="width:250px;height:250px;" class="center-img">
+<!-- Main Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>Random text describing about yourself.</p>
+
+        <p>More random text</p>
+
+        <p>This is a link to the <a class="blue-links" href="{% url 'blog:history' %}">blog</a></p>
+
+        <p>This is a link to the <a class="blue-links" href="{% url 'blog:portfolio' %}">portfolio</a></p>
+      </div>
+    </div>
+  </div>
+</article>
+{% endblock %}

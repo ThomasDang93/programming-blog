@@ -1,0 +1,174 @@
+body {
+	background-color: #F9FBFF;
+}
+pre {
+    /*#EAEDF2*/
+    background-color: #303030;
+    color: #f1f1f1;
+    font-size: 16px;
+    display: block;
+    padding:10px;
+}
+code {
+    /*#EAEDF2*/
+    background-color: #303030;
+    color: yellow;
+    font-size: 16px;
+    padding: 2px 0px;
+}
+a {
+  word-wrap: break-word;
+}
+
+img {
+  max-width:100%;
+}
+iframe {
+  max-width: 100%;
+}
+p {
+    word-wrap: break-word;
+}
+.word-break {
+  word-wrap: break-word;
+}
+.center-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+#post-tag-list ul {
+  padding: 0;
+  list-style: none;
+  font-family: monaco, Consolas, "Lucida Console", monospace;
+}
+#post-tag-list li {
+  display: inline;
+}
+#sub-head-list ul {
+  text-align: center;
+  list-style: none;
+  font-family: monaco, Consolas, "Lucida Console", monospace;
+}
+#sub-head-list li {
+  display: inline;
+}
+.blue-links {
+  color: #0085A1;
+}
+.custom-social-link {
+  color: blue;
+}
+.custom-background-title {
+	color: #F9FBFF;
+  font-family: monaco, Consolas, "Lucida Console", monospace;
+}
+.custom-older-posts {
+  font-family: monaco, Consolas, "Lucida Console", monospace;
+}
+.custom-copyright {
+  font-family: monaco, Consolas, "Lucida Console", monospace;
+}
+.custom-title-list {
+  font-family: monaco, Consolas, "Lucida Console", monospace;
+}
+.custom-sub-head {
+  font-family: monaco, Consolas, "Lucida Console", monospace;
+  text-align: center;
+}
+.custom-date-list {
+  font-family: monaco, Consolas, "Lucida Console", monospace;
+  color:#868E96;
+}
+.custom-calibri {
+   font-family: Calibri;
+}
+
+#mainNav {
+  position: absolute;
+  border-bottom: 1px solid #F9FBFF;
+  background-color: #F9FBFF;
+  font-family: monaco, Consolas, "Lucida Console", monospace;
+}
+#mainNav .navbar-brand {
+  font-weight: 800;
+  color: black;
+}
+#mainNav .navbar-toggler {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 13px;
+  text-transform: uppercase;
+  color: #343a40;
+}
+#mainNav .navbar-nav > li.nav-item > a {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 992px) {
+  #mainNav {
+    border-bottom: 1px solid transparent;
+    background: transparent;
+  }
+  #mainNav .navbar-brand {
+    padding: 10px 20px;
+    color: #F9FBFF;
+  }
+  #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  #mainNav .navbar-nav > li.nav-item > a {
+    padding: 10px 20px;
+    color: #F9FBFF;
+  }
+  #mainNav .navbar-nav > li.nav-item > a:focus, #mainNav .navbar-nav > li.nav-item > a:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+@media only screen and (min-width: 992px) {
+  #mainNav {
+    -webkit-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+  }
+  #mainNav.is-fixed {
+    /* when the user scrolls down, we hide the header right above the viewport */
+    position: fixed;
+    top: -67px;
+    -webkit-transition: -webkit-transform 0.2s;
+    -moz-transition: -moz-transform 0.2s;
+    transition: transform 0.2s;
+    border-bottom: 1px solid white;
+    background-color: rgba(249, 251, 255, 0.9);
+  }
+  #mainNav.is-fixed .navbar-brand {
+    color: #212529;
+  }
+  #mainNav.is-fixed .navbar-brand:focus, #mainNav.is-fixed .navbar-brand:hover {
+    color: #0085A1;
+  }
+  #mainNav.is-fixed .navbar-nav > li.nav-item > a {
+    color: #212529;
+  }
+  #mainNav.is-fixed .navbar-nav > li.nav-item > a:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover {
+    color: #0085A1;
+  }
+  #mainNav.is-visible {
+    /* if the user changes the scrolling direction, we show the header */
+    -webkit-transform: translate3d(0, 100%, 0);
+    -moz-transform: translate3d(0, 100%, 0);
+    -ms-transform: translate3d(0, 100%, 0);
+    -o-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
