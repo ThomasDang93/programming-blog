@@ -1,7 +1,7 @@
 # programming-blog
 
 **programming-blog** is my personal Django project that serves 
-as a template for a blog websitemade with programmers in mind. 
+as a template for a blog website made with programmers in mind. 
 Here are the major features: 
 * Markdown editor
 * Disqus comment integration
