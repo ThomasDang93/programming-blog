@@ -21,10 +21,10 @@ improvements that you think can extend the functionality of the blog.
 
 Quick start
 -----------
-These instructions assume that you have initiated a brand new Django project with `django-admin startproject yourprojectname`. You should also create your own virtual environment with `virtualenv` to avoid package conflicts.
+These instructions assume that you have initiated a brand new Django project with `django-admin startproject yourprojectname`. You should also create your own virtual environment with `virtualenv` to avoid package conflicts. The directory that contains `manage.py` will be your root directory.
 
 ## Step 1
-In your new Django project, save your SECRET_ACCESS_KEY into a text editor. You will need it later.
+In your new Django project, save your SECRET_ACCESS_KEY into a text editor(located under `settings.py`). You will need it later.
 
 Now capture the **programming-blog** repository using `git clone https://github.com/ThomasDang93/programming-blog.git`.
 Once captured, move all the files into your Django root directory so that it overirides your original Django files. 
